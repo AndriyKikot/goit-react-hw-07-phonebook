@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 
-import { addContact } from '../../redux/contacts/contacts-actions';
+import { addContact } from '../../redux/contacts/contacts-operations';
 import { getContacts } from '../../redux/contacts/contacts-selectors';
 
 import styles from './ContactForm.module.css';
@@ -106,18 +106,3 @@ function ContactForm() {
 }
 
 export default ContactForm;
-
-// ===============  Step 1  ===============
-
-// import { useSelector, useDispatch } from 'react-redux';
-// import { connect } from 'react-redux';
-
-// const mapStateToProps = state => ({
-//   contacts: state.contacts.items,
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   onAddContact: (name, number) => dispatch(addContact(name, number)),
-// });
-
-// export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);
