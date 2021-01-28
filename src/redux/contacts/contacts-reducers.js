@@ -14,7 +14,7 @@ import {
   changeFilter,
 } from './contacts-actions';
 
-const items = createReducer([], {
+const contacts = createReducer([], {
   [fetchContactsSuccess]: (_, { payload }) => payload,
   [addContactSuccess]: (state, { payload }) => [...state, payload],
   [deleteContactSuccess]: (state, { payload }) =>
@@ -38,7 +38,7 @@ const loading = createReducer(false, {
 });
 
 export default combineReducers({
-  items,
+  contacts,
   filter,
   loading,
 });

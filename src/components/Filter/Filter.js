@@ -27,22 +27,3 @@ const Filter = () => {
 };
 
 export default Filter;
-
-// ===============  Step 1  ===============
-
-// import { connect } from 'react-redux';
-
-// Filter.propTypes = {
-//   value: PropTypes.string.isRequired,
-//   onChange: PropTypes.func.isRequired,
-// };
-
-// const mapStateToProps = state => ({
-//   value: state.contacts.filter,
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   onChange: event => dispatch(changeFilter(event.target.value)),
-// });
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Filter);

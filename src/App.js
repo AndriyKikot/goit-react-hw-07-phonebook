@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { getContacts } from './redux/contacts/contacts-selectors';
+import { getContacts, getLoader } from './redux/contacts/contacts-selectors';
 import { fetchContacts } from './redux/contacts/contacts-operations';
 import Container from './components/Container';
 import ContactForm from './components/ContactForm';
@@ -15,6 +15,7 @@ import './App.css';
 
 function App() {
   const contacts = useSelector(getContacts);
+  const loader = useSelector(getLoader);
   const dispatch = useDispatch();
 
   useEffect(() => dispatch(fetchContacts()), [dispatch]);
@@ -35,6 +36,8 @@ function App() {
         ) : (
           <p>Your phone book is empty :(</p>
         )}
+
+        {loader && <p>Loading...</p>}
 
         <ToastContainer autoClose={3000} />
       </Container>
